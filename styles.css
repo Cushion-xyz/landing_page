@@ -1,0 +1,422 @@
+:root {
+  --bg: #050312;
+  --panel: #11101b;
+  --border: rgba(142, 141, 168, 0.25);
+  --text: #f4f4f8;
+  --muted: #b3b3c2;
+  --accent: #11f1c0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(60% 35% at 50% 58%, rgba(0, 188, 129, 0.18), transparent 72%),
+    linear-gradient(180deg, #03020b 0%, #020108 58%, #010106 100%);
+  line-height: 1.35;
+  position: relative;
+}
+
+.page-grid {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(rgba(146, 145, 170, 0.13) 1px, transparent 1px) 0 0 / 100% 176px,
+    linear-gradient(90deg, rgba(146, 145, 170, 0.13) 1px, transparent 1px) 0 0 / 18% 100%;
+}
+
+main,
+header,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.15rem 0;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.logo-mark {
+  width: 22px;
+  height: 18px;
+  border-radius: 9px;
+  background:
+    linear-gradient(#fff 0 0) center 3px / 100% 4px no-repeat,
+    linear-gradient(#fff 0 0) center 9px / 82% 4px no-repeat,
+    linear-gradient(#fff 0 0) center 15px / 100% 4px no-repeat;
+  opacity: 0.95;
+}
+
+.logo-text {
+  font-size: 2.1rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.78rem 1.35rem;
+  font: 600 1.05rem/1 "Manrope", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #1dffcf, #00dcae);
+  color: #032d24;
+  box-shadow: 0 0 0 2px rgba(26, 238, 190, 0.17), 0 8px 22px rgba(17, 241, 192, 0.2);
+}
+
+.hero {
+  padding: 7.8rem 0 3.8rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 1.25rem auto 2rem;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.85rem);
+}
+
+.hero-image,
+.image-medium,
+.wide-strip {
+  border: 1px solid rgba(165, 164, 190, 0.25);
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-large {
+  margin-top: 1.2rem;
+  min-height: 590px;
+  background: #101225 url("./first.avif") center / cover no-repeat;
+}
+
+.image-large::before,
+.image-medium::before,
+.wide-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 60% 34%, rgba(255, 196, 149, 0.7), transparent 28%),
+    linear-gradient(132deg, rgba(255, 89, 115, 0.65) 24%, rgba(255, 241, 112, 0.56) 40%, rgba(84, 255, 235, 0.5) 54%, rgba(130, 115, 255, 0.45) 72%, transparent 86%),
+    linear-gradient(180deg, #222058 0%, #3b2c6c 44%, #161739 100%);
+}
+
+.image-large::after,
+.image-medium::after,
+.wide-strip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 23% 79%, rgba(225, 233, 255, 0.75) 0 11%, transparent 11.8%),
+    radial-gradient(circle at 48% 77%, rgba(228, 235, 255, 0.85) 0 12%, transparent 12.7%),
+    radial-gradient(circle at 63% 85%, rgba(225, 233, 255, 0.75) 0 14%, transparent 14.7%),
+    radial-gradient(circle at 79% 82%, rgba(222, 232, 255, 0.65) 0 12%, transparent 12.9%),
+    radial-gradient(circle at 8% 90%, rgba(223, 233, 255, 0.68) 0 11%, transparent 11.8%),
+    radial-gradient(circle at 35% 92%, rgba(223, 233, 255, 0.5) 0 10%, transparent 10.7%);
+  filter: drop-shadow(0 -10px 20px rgba(14, 11, 26, 0.6));
+  opacity: 0.9;
+}
+
+.image-large::before {
+  display: none;
+}
+
+.image-large::after {
+  display: none;
+}
+
+.problem {
+  margin-top: 5.8rem;
+  padding: 4.5rem 0 5.3rem;
+  border-block: 1px solid rgba(141, 140, 165, 0.2);
+  background: linear-gradient(180deg, rgba(16, 14, 29, 0.66), rgba(8, 6, 21, 0.72));
+}
+
+.section-head {
+  text-align: center;
+}
+
+.section-head h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.section-head p {
+  margin: 0.95rem 0 0;
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+.cards-two {
+  margin-top: 3.3rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid rgba(142, 141, 168, 0.2);
+}
+
+.problem-card {
+  padding: 1.6rem;
+  min-height: 174px;
+}
+
+.problem-card + .problem-card {
+  border-left: 1px solid rgba(142, 141, 168, 0.2);
+}
+
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 30% 20%, #181a31, #0b0a19 72%);
+  border: 1px solid rgba(163, 162, 190, 0.22);
+  color: #fff;
+}
+
+.problem-card h3 {
+  margin: 1.45rem 0 0.7rem;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.problem-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.28rem;
+}
+
+.split-intro {
+  margin-top: 4.2rem;
+  border: 1px solid rgba(142, 141, 168, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.intro-copy {
+  padding: 2.8rem 2.2rem 3rem;
+  background: rgba(8, 7, 17, 0.86);
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #d7d7e4;
+}
+
+.intro-copy h2 {
+  margin: 0.55rem 0 1.25rem;
+  font-size: clamp(3rem, 8vw, 5.2rem);
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.intro-copy p {
+  max-width: 430px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.25rem;
+}
+
+.image-medium {
+  border: 0;
+  border-radius: 0;
+  min-height: 368px;
+  background: #0b1228 url("./second.avif") center / cover no-repeat;
+}
+
+.image-medium::before {
+  display: none;
+}
+
+.image-medium::after {
+  display: none;
+}
+
+.wide-strip {
+  margin-top: 2rem;
+  min-height: 194px;
+  background: #111b39 url("./third.avif") center / cover no-repeat;
+}
+
+.wide-strip::before {
+  display: none;
+}
+
+.wide-strip::after {
+  display: none;
+}
+
+.signup-section {
+  padding: 5.7rem 0 5rem;
+}
+
+.signup-card {
+  margin: 2rem auto 0;
+  width: min(720px, 100%);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 2rem;
+  background:
+    radial-gradient(50% 110% at 50% 100%, rgba(0, 204, 147, 0.16), transparent 70%),
+    linear-gradient(110deg, rgba(28, 24, 41, 0.78), rgba(14, 14, 26, 0.9));
+}
+
+.signup-card label {
+  display: block;
+  margin: 0.5rem 0 0.65rem;
+  font-size: 1.2rem;
+}
+
+.signup-card input {
+  width: 100%;
+  border: 0;
+  border-radius: 18px;
+  padding: 1.05rem 1.3rem;
+  margin-bottom: 1rem;
+  font: 500 1.55rem/1.4 "Manrope", sans-serif;
+  color: #272737;
+}
+
+.signup-card input::placeholder {
+  color: #9a9aa8;
+}
+
+.signup-card .btn {
+  margin-top: 0.6rem;
+}
+
+.site-footer {
+  border-top: 1px solid rgba(142, 141, 168, 0.2);
+  padding: 1.9rem 0 2.7rem;
+}
+
+.site-footer p {
+  margin: 1rem 0 0;
+  font-size: 1.15rem;
+  color: #cdcfde;
+}
+
+@media (max-width: 900px) {
+  .logo-text {
+    font-size: 1.65rem;
+  }
+
+  .problem-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .problem-card p {
+    font-size: 1.02rem;
+  }
+
+  .split-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .image-medium {
+    min-height: 290px;
+  }
+
+  .site-footer p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 740px) {
+  .container {
+    width: min(1120px, calc(100% - 1.25rem));
+  }
+
+  .site-header {
+    padding-top: 0.9rem;
+  }
+
+  .site-header .btn {
+    padding: 0.72rem 1.08rem;
+    font-size: 0.95rem;
+  }
+
+  .hero {
+    padding-top: 4.25rem;
+  }
+
+  .hero p {
+    font-size: 1.06rem;
+  }
+
+  .image-large {
+    min-height: 360px;
+  }
+
+  .cards-two {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-card + .problem-card {
+    border-left: 0;
+    border-top: 1px solid rgba(142, 141, 168, 0.2);
+  }
+
+  .signup-card {
+    padding: 1.2rem;
+    border-radius: 20px;
+  }
+
+  .signup-card label {
+    font-size: 1.05rem;
+  }
+
+  .signup-card input {
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+}
