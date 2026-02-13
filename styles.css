@@ -18,7 +18,7 @@ body {
 }
 
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--text);
   background:
     radial-gradient(60% 35% at 50% 58%, rgba(0, 188, 129, 0.18), transparent 72%),
@@ -62,6 +62,12 @@ footer {
   gap: 0.55rem;
 }
 
+.logo-image {
+  display: block;
+  width: clamp(108px, 13vw, 140px);
+  height: auto;
+}
+
 .logo-mark {
   width: 22px;
   height: 18px;
@@ -86,7 +92,7 @@ footer {
   border: 0;
   border-radius: 999px;
   padding: 0.78rem 1.35rem;
-  font: 600 1.05rem/1 "Manrope", sans-serif;
+  font: 400 1.05rem/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   cursor: pointer;
 }
@@ -106,14 +112,14 @@ footer {
   margin: 0;
   font-size: clamp(2.6rem, 7vw, 5rem);
   letter-spacing: -0.03em;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .hero p {
   max-width: 700px;
   margin: 1.25rem auto 2rem;
   color: var(--muted);
-  font-size: clamp(0.95rem, 1.5vw, 1.85rem);
+  font-size: clamp(0.9rem, 1.2vw, 1.35rem);
 }
 
 .hero-image,
@@ -183,7 +189,7 @@ footer {
   margin: 0;
   font-size: clamp(1.8rem, 3.2vw, 3rem);
   letter-spacing: -0.03em;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .section-head p {
@@ -223,7 +229,7 @@ footer {
 .problem-card h3 {
   margin: 1.45rem 0 0.7rem;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.015em;
 }
 
@@ -323,7 +329,7 @@ footer {
   border-radius: 18px;
   padding: 1.05rem 1.3rem;
   margin-bottom: 1rem;
-  font: 500 1.55rem/1.4 "Manrope", sans-serif;
+  font: 400 1.55rem/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #272737;
 }
 
@@ -333,6 +339,25 @@ footer {
 
 .signup-card .btn {
   margin-top: 0.6rem;
+}
+
+.signup-card .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-status {
+  min-height: 1.4em;
+  margin: 0.9rem 0 0;
+  font-size: 0.95rem;
+}
+
+.form-status[data-state="success"] {
+  color: #7affcf;
+}
+
+.form-status[data-state="error"] {
+  color: #ff9494;
 }
 
 .site-footer {

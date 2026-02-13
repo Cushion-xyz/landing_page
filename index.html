@@ -4,12 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cushion Landing</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -17,8 +11,7 @@
 
     <header class="site-header container">
       <div class="logo">
-        <span class="logo-mark" aria-hidden="true"></span>
-        <span class="logo-text">Cushion</span>
+        <img class="logo-image" src="./logo.svg" alt="Cushion" />
       </div>
       <a class="btn btn-primary" href="#ready-to-cushion">Get alpha access</a>
     </header>
@@ -86,24 +79,37 @@
           <h2>Ready to Cushion your crypto?</h2>
           <p>Join the Alpha waitlist!</p>
         </div>
-        <div class="signup-card">
+        <form class="signup-card" id="waitlist-form">
           <label for="wallet">Wallet Address</label>
-          <input id="wallet" type="text" placeholder="Enter your Wallet Address" />
+          <input
+            id="wallet"
+            name="walletAddress"
+            type="text"
+            placeholder="Enter your Wallet Address"
+            required
+          />
 
           <label for="twitter">Twitter handle</label>
-          <input id="twitter" type="text" placeholder="Enter your Twitter Handle" />
+          <input
+            id="twitter"
+            name="twitterHandle"
+            type="text"
+            placeholder="Enter your Twitter Handle"
+            required
+          />
 
-          <button class="btn btn-primary">Sign up</button>
-        </div>
+          <button class="btn btn-primary" type="submit">Sign up</button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
       </section>
     </main>
 
     <footer class="site-footer container">
       <div class="logo">
-        <span class="logo-mark" aria-hidden="true"></span>
-        <span class="logo-text">Cushion</span>
+        <img class="logo-image" src="./logo.svg" alt="Cushion" />
       </div>
       <p>Never Fear Liquidation Again</p>
     </footer>
+    <script src="signup.js"></script>
   </body>
 </html>
