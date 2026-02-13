@@ -29,7 +29,7 @@ body {
 
 .page-grid {
   pointer-events: none;
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   background:
@@ -241,18 +241,19 @@ footer {
 }
 
 .intro-copy {
-  padding: 2.8rem 2.2rem 3rem;
+  --intro-grid-offset: clamp(2.4rem, 4.2vw, 3.6rem);
+  padding: 2.8rem var(--intro-grid-offset) 3rem 0;
   background: rgba(8, 7, 17, 0.86);
 }
 
 .eyebrow {
-  margin: 0;
+  margin: 0 0 0 var(--intro-grid-offset);
   font-size: 1.05rem;
   color: #d7d7e4;
 }
 
 .intro-copy h2 {
-  margin: 0.55rem 0 1.25rem;
+  margin: 0.55rem 0 1.25rem var(--intro-grid-offset);
   font-size: clamp(3rem, 8vw, 5.2rem);
   color: var(--accent);
   letter-spacing: -0.03em;
@@ -261,7 +262,7 @@ footer {
 
 .intro-copy p {
   max-width: 430px;
-  margin: 0;
+  margin: 0 0 0 var(--intro-grid-offset);
   color: var(--muted);
   font-size: 1.25rem;
 }
@@ -391,6 +392,10 @@ footer {
 
   .hero p {
     font-size: 1.06rem;
+  }
+
+  .intro-copy {
+    --intro-grid-offset: 1.2rem;
   }
 
   .image-large {
